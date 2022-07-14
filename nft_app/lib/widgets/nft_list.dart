@@ -50,6 +50,15 @@ class _NftListState extends State<NftList> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _scrollController.removeListener(() {
+      autoScroll();
+    });
+    _scrollController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Transform.rotate(
       angle: pi * 1.96,
@@ -72,9 +81,9 @@ class _NftListState extends State<NftList> {
                     ),
                   );
                 },
-                child: Hero(
-                  tag: image,
-                  child: SizedBox(
+                child: SizedBox(
+                  child: Hero(
+                    tag: image,
                     child: Image.asset(
                       image,
                       width: 130,
