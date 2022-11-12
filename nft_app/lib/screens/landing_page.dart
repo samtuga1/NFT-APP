@@ -1,5 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import "dart:math" show pi;
+import 'package:nft_app/screens/nft_page.dart';
 import '../widgets/nft_list.dart';
 
 class LandingPage extends StatelessWidget {
@@ -87,23 +88,24 @@ class LandingPage extends StatelessWidget {
                 const SizedBox(
                   height: 12,
                 ),
-                Container(
-                  height: 55,
-                  width: 150,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: const Color(0xFF3000Ff)),
-                  child: const Center(
-                    child: Text(
-                      'Discover',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 17.5,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                )
+                _createBtn(context)
+                // Container(
+                //   height: 55,
+                //   width: 150,
+                //   decoration: BoxDecoration(
+                //       borderRadius: BorderRadius.circular(8),
+                //       color: const Color(0xFF3000Ff)),
+                //   child: const Center(
+                //     child: Text(
+                //       'Discover',
+                //       style: TextStyle(
+                //         color: Colors.white,
+                //         fontSize: 17.5,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ),
+                // )
               ],
             ),
           )
@@ -111,4 +113,37 @@ class LandingPage extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _createBtn(context) {
+  return Container(
+      width: 150,
+      height: 55,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: const Color(0xFF3000Ff)),
+      // ignore: deprecated_member_use
+      child: FlatButton(
+          onPressed: () => {
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                        builder: (context) => NftPage(
+                              image: 'assets/images/1.png',
+                            )))
+              },
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          child: const Center(
+            child: Text(
+              'Discover',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 17.5,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          )));
 }

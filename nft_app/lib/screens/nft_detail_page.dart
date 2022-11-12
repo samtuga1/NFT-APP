@@ -1,10 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:nft_app/screens/confirmed_screen.dart';
-import 'package:nft_app/screens/nft_page.dart';
 import 'package:nft_app/widgets/fade_in_animation.dart';
 
 import '../widgets/reveal_route.dart';
