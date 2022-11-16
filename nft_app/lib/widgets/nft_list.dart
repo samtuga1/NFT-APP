@@ -22,7 +22,7 @@ class _NftListState extends State<NftList> {
         autoScroll();
       }
     });
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
       autoScroll();
     });
   }
